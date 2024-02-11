@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sidekick_libraly/create_book_page.dart';
+import 'package:sidekick_libraly/page/create_book_page.dart';
+import 'package:sidekick_libraly/page/show_book_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,7 +56,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: CreateBookPage(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [ShowBookList(), CreateBookPage()],
+      ),
     );
   }
 }

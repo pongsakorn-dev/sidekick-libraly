@@ -14,7 +14,6 @@ class CreateBookPage extends StatefulWidget {
 class _CreateBookPageState extends State<CreateBookPage> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _authorController = TextEditingController();
-  final TextEditingController _isbnController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +40,12 @@ class _CreateBookPageState extends State<CreateBookPage> {
                 TextField(
                     controller: _authorController,
                     decoration: InputDecoration(labelText: 'Author')),
-                TextField(
-                    controller: _isbnController,
-                    decoration: InputDecoration(labelText: 'ISBN')),
                 TextButton(
                   onPressed: () {
                     BlocProvider.of<BookBloc>(context).add(
                       SaveBookEvent(
                         _titleController.text,
                         _authorController.text,
-                        _isbnController.text,
                       ),
                     );
                   },

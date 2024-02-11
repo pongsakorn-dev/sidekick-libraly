@@ -9,7 +9,6 @@ import 'package:sidekick_libraly/data/models/book_model.dart';
 class BookBloc extends Bloc<CreateBookEvent, CreateBookState> {
   BookBloc() : super(CreateBookInitial());
 
-  @override
   Stream<CreateBookState> mapEventToState(CreateBookEvent event) async* {
     if (event is SaveBookEvent) {
       yield CreateBookLoading();
